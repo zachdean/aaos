@@ -5,16 +5,11 @@ jobs:
     vmImage: ubuntu-latest
 
   steps:
-  - script: sudo mkdir ~/android_build
-    displayName: 'make the working directory'
-
   - task: Bash@3
     inputs:
       filePath: './build_aaos.sh'
-      workingDirectory: '~/android_build'
 
   - script: echo "##vso[task.setvariable variable=imgDir;]$(pwd | sed 's/\/device\/brcm\/rpi4$//')/out/target/product/rpi4"
-    workingDirectory: '~/android_build'
     displayName: 'get img dir'
 
   - task: ArchiveFiles@2
