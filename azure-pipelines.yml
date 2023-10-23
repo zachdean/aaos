@@ -5,7 +5,7 @@ jobs:
     vmImage: ubuntu-latest
 
   steps:
-  - script: sudo mkdir /android_build
+  - script: sudo mkdir ~/android_build
     displayName: 'make the working directory'
 
   - task: Bash@3
