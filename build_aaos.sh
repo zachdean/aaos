@@ -7,6 +7,9 @@ sudo apt-get install -y bc coreutils dosfstools e2fsprogs fdisk kpartx mtools ni
 sudo pip3 install meson mako jinja2 ply pyyaml
 
 # install repo
+mkdir ~/bin
+PATH=$PATH:~/bin
+
 export REPO=$(mktemp /tmp/repo.XXXXXXXXX)
 curl -o ${REPO} https://storage.googleapis.com/git-repo-downloads/repo
 gpg --recv-keys 8BB9AD793E8E6153AF0F9A4416530D5E920F5C65
